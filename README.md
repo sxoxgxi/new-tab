@@ -4,6 +4,7 @@ It is a themed start page for new tabs in the browser. It is a work in progress.
 
 ## Features
 
+- Load once online and then works offline
 - Search bar with customizable search engines
 - Quick Links with customizable Name and URLs
 - Sortable Quick Links
@@ -17,6 +18,19 @@ It is a themed start page for new tabs in the browser. It is a work in progress.
 - Catppuccin Theme
 
   ![Preview](./assests/catppuccin.png)
+
+- More Themes include:
+
+  - Dracula
+  - Nord
+  - One Dark
+  - Solarized Dark
+  - Oceanic Next
+  - Gruvbox Dark
+  - Ayu Dark
+  - Material Dark
+  - Monokai
+  - More coming soon!
 
 ## Installation
 
