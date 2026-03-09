@@ -1,0 +1,15 @@
+:root {
+  --color-base: #191724;
+  --color-surface: #1f1d2e;
+  --color-overlay: #26233a;
+  --color-muted: #908caa;
+  --color-text: #e0def4;
+  --color-love: #eb6f92;
+  --color-gold: #f6c177;
+  --color-pine: #31748f;
+  --color-foam: #9ccfd8;
+  --color-iris: #c4a7e7; /* Accent color */
+  --color-online: #77dd77;
+  --color-idle: #fdfd96;
+  --color-dnd: #ff6961;
+}

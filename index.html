@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Tab</title>
+    <link rel="stylesheet" href="styles/output.css" />
+    <link rel="stylesheet" id="theme" href="themes/rosepine.css"
+  </head>
+  <body
+    class="bg-base text-text min-h-screen flex flex-col items-center justify-center p-6 font-sans"
+  >
+    <header class="text-center mb-10">
+      <h1
+        class="text-5xl md:text-6xl font-light tracking-tight bg-linear-to-r from-iris via-foam pb-2 to-gold bg-clip-text text-transparent"
+      >
+        your day, your way
+      </h1>
+      <p class="text-muted mt-2 text-lg">a new tab for every day</p>
+    </header>
+
+    <div
+      id="time"
+      class="text-6xl md:text-8xl font-light tracking-tighter mb-3 drop-shadow-lg"
+    >
+      00:00
+    </div>
+    <div id="date" class="text-muted text-xl md:text-2xl mb-10"></div>
+
+    <div class="w-full max-w-2xl mb-12">
+      <form
+        id="searchForm"
+        class="flex rounded-xl overflow-hidden border border-overlay focus-within:border-muted bg-surface shadow-xl"
+      >
+        <select
+          id="engineSelect"
+          class="bg-overlay text-text px-4 py-3 text-sm border-r border-overlay focus:outline-none cursor-pointer"
+        >
+        </select>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search..."
+          autocomplete="off"
+          class="flex-1 bg-transparent px-5 py-4 text-lg outline-none placeholder-muted"
+        />
+        <button
+          type="submit"
+          class="px-6 bg-overlay hover:bg-muted/30 transition-colors"
+        >
+          →
+        </button>
+      </form>
+      <div class="text-right mt-2">
+        <button
+          id="addEngineBtn"
+          class="text-muted cursor-pointer hover:text-iris text-sm underline-offset-2 hover:underline"
+        >
+          + Add custom engine
+        </button>
+      </div>
+    </div>
+
+    <div class="w-full max-w-4xl">
+      <div
+        id="linksGrid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+      ></div>
+      <div class="text-right mt-3">
+        <button
+          id="addLinkBtn"
+          class="text-muted cursor-pointer hover:text-iris text-sm underline-offset-2 hover:underline"
+        >
+          + Add quick link
+        </button>
+      </div>
+    </div>
+
+<footer class="mt-16 text-muted text-sm opacity-70 bg-surface p-3 rounded-xl shadow-md">
+  <button id="themeToggle" class="cursor-pointer px-4 py-2 bg-accent text-bg rounded hover:text-iris transition">
+    Switch Theme
+  </button>
+</footer>
+    <div
+      id="modal"
+      class="hidden fixed inset-0 bg-base/80 flex items-center justify-center z-50 backdrop-blur-sm"
+    >
+      <div
+        class="bg-surface p-6 rounded-xl border border-overlay max-w-md w-full shadow-2xl"
+      >
+        <h2 id="modalTitle" class="text-xl font-medium mb-4 text-iris"></h2>
+        <input
+          id="nameInput"
+          placeholder="Title"
+          class="w-full mb-3 px-4 py-2 bg-overlay border border-overlay rounded text-text placeholder-muted outline-none focus:border-foam"
+        />
+        <input
+          id="descInput"
+          placeholder="Description (optional)"
+          class="w-full mb-3 px-4 py-2 bg-overlay border border-overlay rounded text-text placeholder-muted outline-none focus:border-foam"
+        />
+        <input
+          id="urlInput"
+          placeholder="https://..."
+          class="w-full mb-4 px-4 py-2 bg-overlay border border-overlay rounded text-text placeholder-muted outline-none focus:border-foam"
+        />
+        <div class="flex justify-end gap-3">
+          <button
+            id="cancelBtn"
+            class="cursor-pointer px-4 py-2 text-muted hover:text-text transition-colors"
+          >
+            Cancel
+          </button>
+          <button
+            id="submitBtn"
+            class="cursor-pointer px-5 py-2 bg-pine hover:bg-iris text-text rounded transition-colors font-medium"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      id="engineModal"
+      class="hidden fixed inset-0 bg-base/80 flex items-center justify-center z-50 backdrop-blur-sm"
+    >
+      <div
+        class="bg-surface p-6 rounded-xl border border-overlay max-w-md w-full shadow-2xl"
+      >
+        <h2 id="engineModalTitle" class="text-xl font-medium mb-4 text-iris">
+          Add Search Engine
+        </h2>
+        
+        <input
+          id="engineNameInput"
+          placeholder="Engine name"
+          class="w-full mb-3 px-4 py-2 bg-overlay border border-overlay rounded text-text placeholder-muted outline-none focus:border-foam"
+        />
+        
+        <input
+          id="engineUrlInput"
+          placeholder="https://example.com/search?q=%s"
+          class="w-full mb-4 px-4 py-2 bg-overlay border border-overlay rounded text-text placeholder-muted outline-none focus:border-foam"
+        />
+        
+        <div class="flex justify-end gap-3">
+          <button
+            id="engineCancelBtn"
+            class="cursor-pointer px-4 py-2 text-muted hover:text-text transition-colors"
+          >
+            Cancel
+          </button>
+          <button
+            id="engineSubmitBtn"
+            class="cursor-pointer px-5 py-2 bg-pine hover:bg-iris text-text rounded transition-colors font-medium"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" defer ></script>
+  </body>
+</html>
