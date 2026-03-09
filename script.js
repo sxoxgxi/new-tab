@@ -47,6 +47,7 @@ async function setupThemeSwitcher() {
 
 // Initialize
 setupThemeSwitcher();
+
 // Clock
 function updateClock() {
   const now = new Date();

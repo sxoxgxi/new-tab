@@ -1,15 +1,31 @@
-const CACHE_NAME = "newtab-v1";
-const ASSETS = [
-  "/",
-  "/index.html",
-  "/script.js",
-  "/styles/output.css",
-  "/themes/catppuccin.css",
-  "/themes/rosepine.css",
+const CACHE_NAME = "newtab-v2";
+
+const BASE_ASSETS = [
+  "/new-tab/",
+  "/new-tab/index.html",
+  "/new-tab/script.js",
+  "/new-tab/styles/output.css",
 ];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));
+  e.waitUntil(
+    (async () => {
+      const response = await fetch("/new-tab/themes/index.json");
+      const themeFiles = await response.json();
+
+      const themeAssets = themeFiles.map((file) => `/new-tab/themes/${file}`);
+      const allAssets = [...BASE_ASSETS, ...themeAssets];
+
+      const cache = await caches.open(CACHE_NAME);
+      await cache.addAll(allAssets);
+
+      self.skipWaiting();
+    })(),
+  );
+});
+
+self.addEventListener("activate", (e) => {
+  e.waitUntil(clients.claim());
 });
 
 self.addEventListener("fetch", (e) => {
