@@ -1,33 +1,52 @@
-// Theme toggle
-const theme = document.getElementById("theme");
+// Theme Switcher
+const themeLink = document.getElementById("theme");
 const btn = document.getElementById("themeToggle");
+
+async function loadThemeList() {
+  try {
+    const res = await fetch("themes/index.json");
+    return await res.json();
+  } catch (e) {
+    console.error("Failed to load themes/index.json", e);
+    return [];
+  }
+}
 
 function getThemeName(href) {
   return href.split("/").pop().replace(".css", "").replace(/-/g, " ");
 }
 
 function updateButtonText() {
-  const currentHref = theme.getAttribute("href");
+  const currentHref = themeLink.getAttribute("href");
   btn.textContent = "using " + getThemeName(currentHref);
 }
 
-btn.onclick = () => {
-  const current = theme.getAttribute("href");
-  const next = current.includes("rosepine")
-    ? "themes/catppuccin.css"
-    : "themes/rosepine.css";
+async function setupThemeSwitcher() {
+  const themeFiles = await loadThemeList();
+  const themes = themeFiles.map((file) => `themes/${file}`);
 
-  theme.href = next;
-  localStorage.setItem("theme", next);
+  const saved = localStorage.getItem("theme");
+  if (saved && themes.includes(saved)) {
+    themeLink.href = saved;
+  } else {
+    themeLink.href = themes[0];
+  }
   updateButtonText();
-};
 
-const saved = localStorage.getItem("theme");
-if (saved) {
-  theme.href = saved;
+  btn.addEventListener("click", () => {
+    const current = themeLink.getAttribute("href");
+    const currentIndex = themes.indexOf(current);
+    const nextIndex = (currentIndex + 1) % themes.length;
+    const nextTheme = themes[nextIndex];
+
+    themeLink.href = nextTheme;
+    localStorage.setItem("theme", nextTheme);
+    updateButtonText();
+  });
 }
-updateButtonText();
 
+// Initialize
+setupThemeSwitcher();
 // Clock
 function updateClock() {
   const now = new Date();

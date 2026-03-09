@@ -24,13 +24,13 @@ It is a themed start page for new tabs in the browser. It is a work in progress.
 2. Open your browser settings and navigate to the section where you can set a custom new tab page.
 3. Paste the copied URL into the field for the new tab page and save your changes.
 
-## Contributing
+## Adding New Themes
 
-If you would like to contribute to this project, please follow these steps:
+If you would like to add a new theme, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch.
-3. Make your changes.
+3. Add the new theme css file to the `themes` directory and update the index.json with the new theme filename.
 4. Submit a pull request.
 
 _Cheers!_

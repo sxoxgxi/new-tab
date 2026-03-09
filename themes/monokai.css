@@ -1,0 +1,15 @@
+:root {
+  --color-base: #272822;
+  --color-surface: #3e3d32;
+  --color-overlay: #49483e;
+  --color-muted: #75715e;
+  --color-text: #f8f8f2;
+  --color-love: #f92672;
+  --color-gold: #e6db74;
+  --color-pine: #a6e22e;
+  --color-foam: #66d9ef;
+  --color-iris: #ae81ff;
+  --color-online: #a6e22e;
+  --color-idle: #e6db74;
+  --color-dnd: #f92672;
+}
