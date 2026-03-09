@@ -161,5 +161,15 @@
     </div>
 
     <script src="script.js" defer ></script>
+    <script>
+    async function registerServiceWorker() {
+      try {
+        await navigator.serviceWorker.register("./sw.js");
+      } catch (error) {
+        console.error("Service worker registration failed:", error);
+      }
+    }
+    registerServiceWorker();
+  </script>
   </body>
 </html>
