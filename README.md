@@ -30,7 +30,7 @@ If you would like to add a new theme, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch.
-3. Add the new theme css file to the `themes` directory and update the index.json with the new theme filename.
+3. Add the new theme css file to the `themes` directory and update the `index.json` with the new theme filename.
 4. Submit a pull request.
 
 _Cheers!_

@@ -5,6 +5,7 @@ const BASE_ASSETS = [
   "/new-tab/index.html",
   "/new-tab/script.js",
   "/new-tab/styles/output.css",
+  "/new-tab/themes/index.json",
 ];
 
 self.addEventListener("install", (e) => {
@@ -18,8 +19,6 @@ self.addEventListener("install", (e) => {
 
       const cache = await caches.open(CACHE_NAME);
       await cache.addAll(allAssets);
-
-      self.skipWaiting();
     })(),
   );
 });
