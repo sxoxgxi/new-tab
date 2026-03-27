@@ -387,6 +387,9 @@
   .bg-clip-text {
     background-clip: text;
   }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
@@ -472,9 +475,6 @@
   .text-iris {
     color: var(--color-iris);
   }
-  .text-love {
-    color: var(--color-love);
-  }
   .text-muted {
     color: var(--color-muted);
   }
@@ -529,6 +529,11 @@
     --tw-backdrop-blur: blur(var(--blur-sm));
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .transition-all {
     transition-property: all;
@@ -691,6 +696,12 @@
       line-height: var(--tw-leading, var(--text-8xl--line-height));
     }
   }
+}
+.drag-over {
+  border-color: rgb(var(--color-gold));
+  background-color: rgb(var(--color-foam));
+  transform: scale(0.9);
+  box-shadow: 0 0 0 4px rgb(var(--color-foam) / 0.3);
 }
 @property --tw-scale-x {
   syntax: "*";

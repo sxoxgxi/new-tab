@@ -167,8 +167,8 @@ function renderLinks() {
 
     tile.innerHTML = `
             <div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2.5">
-              <button class="edit-btn text-muted hover:text-foam text-base" title="Edit">✎</button>
-              <button class="delete-btn text-muted hover:text-love text-xl leading-none" title="Delete">×</button>
+              <button class="edit-btn text-muted hover:text-foam text-base cursor-pointer" title="Edit">✎</button>
+              <button class="delete-btn text-muted hover:text-love text-xl leading-none cursor-pointer" title="Delete">×</button>
             </div>
             <div class="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity cursor-move text-muted text-xl leading-none">⠿</div>
             <a href="${link.url}" target="_blank" class="block">
@@ -254,6 +254,7 @@ const defaultEngines = [
   { name: "DuckDuckGo", url: "https://duckduckgo.com/?q=%s" },
   { name: "Google", url: "https://www.google.com/search?q=%s" },
   { name: "Brave", url: "https://search.brave.com/search?q=%s" },
+  { name: "YouTube", url: "https://www.youtube.com/results?search_query=%s" },
 ];
 const ENGINES_STORAGE_KEY = "customSearchEngines";
 const SELECTED_KEY = "selectedEngineIndex";
