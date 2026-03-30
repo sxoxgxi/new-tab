@@ -236,8 +236,7 @@ function initDragAndDrop() {
 
       if (fromIndex === toIndex) return;
 
-      const [moved] = links.splice(fromIndex, 1);
-      links.splice(toIndex, 0, moved);
+      [links[fromIndex], links[toIndex]] = [links[toIndex], links[fromIndex]];
 
       saveLinks();
       renderLinks();

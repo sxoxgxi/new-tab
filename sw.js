@@ -1,4 +1,4 @@
-const CACHE_NAME = "newtab-v3";
+const CACHE_NAME = "newtab-v4";
 const BASE_ASSETS = [
   "/new-tab/",
   "/new-tab/index.html",
